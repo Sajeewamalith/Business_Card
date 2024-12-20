@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -49,10 +51,65 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCardScreen() {
+    Box(
+        modifier = Modifier
+            .padding(bottom = 72.dp),
+        contentAlignment = Alignment.BottomCenter
+    ) {
+        Column(
+            horizontalAlignment = Alignment.Start
+        ) {
+            Row(
+                modifier = Modifier.padding(bottom = 8.dp),
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_phone_24),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                )
+                Text(
+                    text = stringResource(R.string.phone_number),
+                    fontSize = 20.sp
+                )
+            }
+            Row(
+                modifier = Modifier.padding(bottom = 8.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_share_24),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                )
+                Text(
+                    text = stringResource(R.string.share),
+                    fontSize = 20.sp
+                )
+            }
+            Row(
+                modifier = Modifier.padding(bottom = 8.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.baseline_email_24),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .padding(end = 16.dp)
+                )
+                Text(
+                    text = stringResource(R.string.email),
+                    fontSize = 20.sp
+                )
+            }
+        }
+    }
     Column(
+        modifier = Modifier
+            .fillMaxHeight(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+       // Spacer(modifier = Modifier.weight(1f))
         Box(
             modifier = Modifier
                 .size(150.dp).padding(bottom = 8.dp)
@@ -75,62 +132,9 @@ fun BusinessCardScreen() {
             fontWeight = FontWeight.Bold,
             color = colorResource(R.color.text_color)
         )
+       // Spacer(modifier = Modifier.weight(1f))
     }
-    Box(
-        modifier = Modifier
-            .padding(bottom = 72.dp),
-        contentAlignment = Alignment.BottomCenter
-    ) {
-        Column(
-            horizontalAlignment = Alignment.Start
-        ) {
-            Row(
-                modifier = Modifier.padding(bottom = 8.dp),
-                ) {
-                Image(
-                    painter = painterResource(id = R.drawable.baseline_phone_24),
-                    contentDescription = null,
-                    modifier = Modifier
-                        //.size(24.dp)
-                        .padding(end = 16.dp)
-                )
-                Text(
-                    text = stringResource(R.string.phone_number),
-                    fontSize = 20.sp
-                )
-            }
-            Row(
-                modifier = Modifier.padding(bottom = 8.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.baseline_share_24),
-                    contentDescription = null,
-                    modifier = Modifier
-                        //.size(24.dp)
-                        .padding(end = 16.dp)
-                )
-                Text(
-                    text = stringResource(R.string.share),
-                    fontSize = 20.sp
-                )
-            }
-            Row(
-                modifier = Modifier.padding(bottom = 8.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.baseline_email_24),
-                    contentDescription = null,
-                    modifier = Modifier
-                        //.size(24.dp)
-                        .padding(end = 16.dp)
-                )
-                Text(
-                    text = stringResource(R.string.email),
-                    fontSize = 20.sp
-                )
-            }
-        }
-    }
+
 }
 
 @Preview(showBackground = true)
