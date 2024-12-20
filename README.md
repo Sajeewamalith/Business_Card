@@ -7,4 +7,4 @@
 
 
 <p align="left">  <img src="https://github.com/Sajeewamalith/Business_Card/blob/master/endResult.png"  width="320" height="620"/> 
- <img src=" <img src="https://github.com/Sajeewamalith/Business_Card/blob/master/endResult.png"  width="320" height="620"/>"  width="320" height="620"/></p>
+ </p>
