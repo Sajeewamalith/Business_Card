@@ -10,10 +10,16 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+
+
+
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -21,8 +27,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -54,8 +62,8 @@ fun BusinessCardScreen() {
     ) {
         Box(
             modifier = Modifier
-                .size(100.dp)
-                .background(Color.LightGray)
+                .size(150.dp).padding(bottom = 8.dp)
+                .background(colorResource(R.color.image_background_color))
         ) {
             Image(
                 painter = painterResource(R.drawable.android_logo),
@@ -65,16 +73,19 @@ fun BusinessCardScreen() {
         }
         Text(
             text = stringResource(R.string.name),
-            fontSize = 24.sp,
+            fontSize = 40.sp,
+            modifier = Modifier.padding(bottom = 12.dp),
         )
         Text(
             text = stringResource(R.string.title),
            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            color = colorResource(R.color.text_color)
         )
     }
     Box(
         modifier = Modifier
-            .padding(bottom = 60.dp),
+            .padding(bottom = 80.dp),
         contentAlignment = Alignment.BottomCenter
     ) {
         Column(
@@ -86,12 +97,13 @@ fun BusinessCardScreen() {
                 Image(
                     painter = painterResource(id = R.drawable.baseline_phone_24),
                     contentDescription = null,
-                    modifier = Modifier.size(24.dp)
-                        .padding(end = 8.dp)
+                    modifier = Modifier
+                        //.size(24.dp)
+                        .padding(end = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.phone_number),
-                    fontSize = 16.sp
+                    fontSize = 20.sp
                 )
             }
             Row(
@@ -100,12 +112,13 @@ fun BusinessCardScreen() {
                 Image(
                     painter = painterResource(id = R.drawable.baseline_share_24),
                     contentDescription = null,
-                    modifier = Modifier.size(24.dp)
-                        .padding(end = 8.dp)
+                    modifier = Modifier
+                        //.size(24.dp)
+                        .padding(end = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.share),
-                    fontSize = 16.sp
+                    fontSize = 20.sp
                 )
             }
             Row() {
@@ -113,12 +126,12 @@ fun BusinessCardScreen() {
                     painter = painterResource(id = R.drawable.baseline_email_24),
                     contentDescription = null,
                     modifier = Modifier
-                        .size(24.dp)
-                        .padding(end = 8.dp)
+                        //.size(24.dp)
+                        .padding(end = 16.dp)
                 )
                 Text(
                     text = stringResource(R.string.email),
-                    fontSize = 16.sp
+                    fontSize = 20.sp
                 )
             }
         }
